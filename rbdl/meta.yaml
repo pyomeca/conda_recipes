@@ -18,8 +18,8 @@ requirements:
     - cmake
 
 about:
-  home: https://github.com/pyomeca/dlib
-  summary: Library for optimisation
+  home: https://bitbucket.org/rbdl/rbdl
+  summary: RBDL is a highly efficient C++ library that contains some essential rigid body dynamics algorithms
 
 extra:
     recipe-maintainers:
