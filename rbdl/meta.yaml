@@ -1,0 +1,26 @@
+package:
+  name: rbdl
+  version: "2.5.0"
+
+source:
+  hg_url: https://bitbucket.org/rbdl/rbdl
+  hg_tag: 1089:dbbbca409457
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - eigen
+
+  build:
+    # - {{ compiler('cxx') }}
+    - cmake
+
+about:
+  home: https://github.com/pyomeca/dlib
+  summary: Library for optimisation
+
+extra:
+    recipe-maintainers:
+        - mrtnz
