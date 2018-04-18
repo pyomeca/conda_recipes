@@ -1,0 +1,32 @@
+package:
+  name: biorbd
+  version: "0.1.0"
+
+source:
+  git_url: https://github.com/pyomeca/biorbd
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - boost
+    - eigen
+    - rbdl
+    - dlib
+    # - "-c mrtnz rbdl"
+    # - "-c mrtnz dlib"
+    - python
+    - numpy
+
+  build:
+    # - {{ compiler('cxx') }}
+    - cmake
+
+about:
+  home: https://github.com/pyomeca/biorbd
+  summary: .
+
+extra:
+    recipe-maintainers:
+        - mrtnz
