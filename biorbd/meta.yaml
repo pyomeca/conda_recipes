@@ -14,8 +14,6 @@ requirements:
     - eigen
     - rbdl
     - dlib
-    # - "-c mrtnz rbdl"
-    # - "-c mrtnz dlib"
     - python
     - numpy
 
