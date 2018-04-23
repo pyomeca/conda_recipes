@@ -2,8 +2,8 @@
 echo -e "\033[32mDid you check that the build number increased (to avoid blocking at the time of upload)?\033[0m"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo -e "\033[32mGood boy!\033[0m"; break;;
-        No ) echo -e "\033[32mWell, do it, now\033[0m"; exit;;
+        Yes ) echo -e "\033[32mGood!\033[0m"; break;;
+        No ) echo -e "\033[32mDo it!\033[0m"; exit;;
     esac
 done
 
