@@ -4,7 +4,7 @@ package:
 
 source:
   hg_url: https://bitbucket.org/rbdl/rbdl
-  hg_tag: dbbbca409457
+  hg_tag: 7c87226
 
 build:
   number: 0
