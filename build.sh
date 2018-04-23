@@ -19,25 +19,18 @@ echo -e "\033[32mlogin into anaconda:\033[0m"
 anaconda login
 
 conda config --set anaconda_upload yes
-
 echo -e "\033[32menvironment set\033[0m"
 
 # build rbdl
 conda build rbdl
-anaconda upload ~/miniconda3/envs/builder/conda-bld/linux-64/rbdl*
-
 echo -e "\033[32mrbdl uploaded\033[0m"
 
 # build dlib
 conda build dlib -c conda-forge
-anaconda upload ~/miniconda3/envs/builder/conda-bld/linux-64/dlib*
-
 echo -e "\033[32mdlib uploaded\033[0m"
 
 # build biorbd
 conda build biorbd -c mrtnz
-anaconda upload ~/miniconda3/envs/builder/conda-bld/linux-64/biorbd*
-
 echo -e "\033[32mbiorbd uploaded\033[0m"
 
 # remove environment
