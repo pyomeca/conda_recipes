@@ -33,6 +33,10 @@ echo -e "\033[32mdlib uploaded\033[0m"
 conda build biorbd -c mrtnz
 echo -e "\033[32mbiorbd uploaded\033[0m"
 
+# build ezC3D
+conda build ezc3d
+echo -e "\033[32mezc3d uploaded\033[0m"
+
 # remove environment
 source deactivate
 conda env remove -n builder

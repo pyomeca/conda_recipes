@@ -1,0 +1,35 @@
+package:
+  name: ezc3d
+  version: "0.1.0"
+
+source:
+  git_url: https://github.com/pyomeca/ezc3d
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - numpy
+
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - swig
+    
+build:
+    rpath:
+        - lib/
+        - lib/ezc3d/
+
+#test:
+#  imports:
+#    - ezc3d
+    
+about:
+  home: https://github.com/pyomeca/ezc3d
+  summary: Library to interact with c3d files
+
+extra:
+    recipe-maintainers:
+        - mrtnz
