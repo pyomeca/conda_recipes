@@ -3,11 +3,11 @@ package:
   version: "2.5.0"
 
 source:
-  hg_url: https://bitbucket.org/rbdl/rbdl
-  hg_tag: 7c87226
+  hg_url: https://bitbucket.org/pariterre/rbdl-windowsfriendly
+  hg_tag: 294594e
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
