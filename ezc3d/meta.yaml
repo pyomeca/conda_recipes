@@ -22,7 +22,6 @@ build:
     rpath:
         - lib/
         - lib/ezc3d/
-
 #test:
 #  imports:
 #    - ezc3d
