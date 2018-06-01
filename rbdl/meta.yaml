@@ -1,13 +1,13 @@
 package:
   name: rbdl
-  version: "2.5.0"
+  version: "2.6.0"
 
 source:
-  hg_url: https://bitbucket.org/pariterre/rbdl-windowsfriendly
-  hg_tag: 294594e
+  hg_url: https://bitbucket.org/rbdl/rbdl
+  hg_tag: 70970b7
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   host:
