@@ -16,6 +16,7 @@ requirements:
     - dlib
     - python
     - numpy
+    - swig
 
   build:
     # - {{ compiler('cxx') }}

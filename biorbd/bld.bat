@@ -7,7 +7,7 @@ cmake ../^
     -DBUILD_SHARED_LIBS=OFF^
     -DPYTHON3_WRAPPER=ON^
 	-DMATLAB_WRAPPER=ON^
-	-DMatlab_TOOLBOX_DIR="%PREFIX%"/MATLAB
+	-DMatlab_TOOLBOX_INSTALL_DIR="%PREFIX%/MATLAB"
 
 cmake --build ./^
     --config Release^
