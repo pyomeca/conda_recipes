@@ -5,7 +5,9 @@ cmake ../^
     -G"Visual Studio 14 2015 Win64"^
     -DCMAKE_INSTALL_PREFIX="%PREFIX%"^
     -DBUILD_SHARED_LIBS=OFF^
-    -DPYTHON3_WRAPPER=ON
+    -DPYTHON3_WRAPPER=ON^
+	-DMATLAB_WRAPPER=ON^
+	-DMatlab_TOOLBOX_DIR="%PREFIX%"/MATLAB
 
 cmake --build ./^
     --config Release^
