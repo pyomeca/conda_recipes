@@ -6,7 +6,7 @@ source:
   git_url: https://github.com/pyomeca/ezc3d
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   host:
