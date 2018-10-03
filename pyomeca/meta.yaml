@@ -19,6 +19,7 @@ requirements:
   build:
     - python
     - setuptools
+    - pyyaml
   run:
     - python
     # dependencies are defined in setup.py
