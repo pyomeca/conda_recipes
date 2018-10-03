@@ -1,53 +1,42 @@
-# VERSION is set in conda_upload.sh
+
+{% set data = load_setup_py_data() %}
+
 package:
-  version: {{ environ['VERSION'] }}
+  name: pyomeca
+  version: {{ data['version'] }}
 
 source:
   path: ..
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  # If the installation is complex, or different between Unix and Windows, use
+  # separate bld.bat and build.sh files instead of this key.  Add the line
+  # "skip: True  # [py<35]" (for example) to limit to Python 3.5 and newer, or
+  # "skip: True  # [not win]" to limit to Windows.
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
-    # if your project compiles code (such as a C extension) then add the required compilers as separate entries here.
-    # compilers are named 'c', 'cxx' and 'fortran'.
-    - {{ compiler('c') }}
-  host:
     - python
-    - pip
+    - setuptools
   run:
     - python
+    # dependencies are defined in setup.py
+    {% for dep in data['install_requires'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
+    {# raw is for ignoring templating with cookiecutter, leaving it for use with conda-build #}
 
 test:
-  imports:
-    - pyomeca
+  source_files:
+    - tests
+  requires:
+    - pytest
+    - pytest-cov
+  commands:
+    - pytest tests
 
 about:
-  home: http://github.com/pyomeca/pyomeca
-  # See https://opensource.org/licenses/alphabetical
-  license: Apache-2.0
-  # The license_family, i.e. "BSD" if license is "BSD-3-Clause". (optional)
-  license_family: Apache
-  # It is strongly encouraged to include a license file in the package,
-  # (even if the license doesn't require it) using the license_file entry.
-  # See http://conda.pydata.org/docs/building/meta-yaml.html#license-file
-  license_file: LICENSE.txt
-  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'
+  home: https://github.com/pyomeca/pyomeca
+  summary: Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way
 
-  # The remaining entries in this section are optional, but recommended
-  description: |
-    simplejson is a simple, fast, complete, correct and extensible
-    JSON <http://json.org> encoder and decoder for Python 2.5+ and
-    Python 3.3+. It is pure Python code with no dependencies, but includes
-    an optional C extension for a serious speed boost.
-  doc_url: http://pyomeca.readthedocs.io/
-  dev_url: https://github.com/pyomeca/pyomeca
-
-extra:
-  recipe-maintainers:
-    # GitHub IDs for maintainers of the recipe.
-    # Always check with the people listed below if they are OK becoming maintainers of the recipe. (There will be spam!)
-    - romainmartinez
-    - pariterre
