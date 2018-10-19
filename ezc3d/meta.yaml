@@ -1,12 +1,12 @@
 package:
   name: ezc3d
-  version: "0.2.0"
+  version: "0.3.0"
 
 source:
   git_url: https://github.com/pyomeca/ezc3d
 
 build:
-  number: 4
+  number: 8
 
 requirements:
   host:
