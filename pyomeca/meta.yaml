@@ -41,3 +41,8 @@ about:
   home: https://github.com/pyomeca/pyomeca
   summary: Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way
 
+extra:
+    recipe-maintainers:
+        - mrtnz
+	    - pariterre
+

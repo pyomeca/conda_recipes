@@ -14,7 +14,7 @@ requirements:
     - eigen
 
   build:
-    # - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}
     - cmake
 
 about:
@@ -24,3 +24,4 @@ about:
 extra:
     recipe-maintainers:
         - mrtnz
+        - pariterre

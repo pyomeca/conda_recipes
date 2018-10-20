@@ -6,7 +6,11 @@ source:
     git_url: https://github.com/pyomeca/ezc3d
 
 build:
-    number: 10
+    number: 11
+    run_exports:
+        strong:
+            - python
+            - numpy
 
 requirements:
     host:
@@ -17,11 +21,6 @@ requirements:
         - {{ compiler('cxx') }}
         - cmake
         - swig 
-
-    run:
-        - python
-        - numpy
-
     
 build:
     rpath:
@@ -38,3 +37,5 @@ about:
 extra:
     recipe-maintainers:
         - mrtnz
+	    - pariterre
+
