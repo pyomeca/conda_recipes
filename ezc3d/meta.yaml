@@ -3,20 +3,25 @@ package:
   version: "0.3.0"
 
 source:
-  git_url: https://github.com/pyomeca/ezc3d
+    git_url: https://github.com/pyomeca/ezc3d
 
 build:
-  number: 8
+    number: 10
 
 requirements:
-  host:
-    - python
-    - numpy
+    host:
+        - python
+        - numpy
+    
+    build:
+        - {{ compiler('cxx') }}
+        - cmake
+        - swig 
 
-  build:
-    - {{ compiler('cxx') }}
-    - cmake
-    - swig
+    run:
+        - python
+        - numpy
+
     
 build:
     rpath:

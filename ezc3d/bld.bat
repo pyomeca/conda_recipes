@@ -5,7 +5,7 @@ cmake ../^
     -G"Visual Studio 14 2015 Win64"^
     -DCMAKE_INSTALL_PREFIX="%PREFIX%"^
 	-DBUILD_EXAMPLE=OFF^
-	-DBINDER_MATLAB=ON^
+	-DBINDER_MATLAB=OFF^
     -DBINDER_PYTHON3=ON^
     -DPython3_EXECUTABLE="%PREFIX%/python.exe"
 
