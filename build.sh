@@ -26,11 +26,11 @@ conda build rbdl
 echo -e "\033[32mrbdl uploaded\033[0m"
 
 # build dlib
-conda build dlib -c conda-forge
+conda build dlib -c conda-forge -c local
 echo -e "\033[32mdlib uploaded\033[0m"
 
 # build biorbd
-conda build biorbd -c mrtnz
+conda build biorbd -c pyomeca -c local
 echo -e "\033[32mbiorbd uploaded\033[0m"
 
 # build ezC3D

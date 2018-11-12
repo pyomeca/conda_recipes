@@ -7,7 +7,7 @@ source:
   hg_tag: 70970b7
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   host:
