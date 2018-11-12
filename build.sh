@@ -1,15 +1,7 @@
 #!/bin/bash
-echo -e "\033[32mDid you check that the build number increased (to avoid blocking at the time of upload)?\033[0m"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) echo -e "\033[32mGood!\033[0m"; break;;
-        No ) echo -e "\033[32mDo it!\033[0m"; exit;;
-    esac
-done
-
 sudo apt install mercurial
 
-conda create -n builder python=3.6
+conda create -n builder python
 source activate builder
 conda install conda-build
 conda build purge
@@ -22,22 +14,27 @@ conda config --set anaconda_upload yes
 echo -e "\033[32menvironment set\033[0m"
 
 # build rbdl
-conda build rbdl
+cd rbdl
+conda build .
 echo -e "\033[32mrbdl uploaded\033[0m"
 
 # build dlib
-conda build dlib -c conda-forge -c local
+cd ../dlib
+conda build . -c conda-forge
 echo -e "\033[32mdlib uploaded\033[0m"
 
 # build biorbd
-conda build biorbd -c pyomeca -c local
+cd ../biorbd
+conda build . -c pyomeca
 echo -e "\033[32mbiorbd uploaded\033[0m"
 
 # build ezC3D
-conda build ezc3d
+cd ../ezc3d
+conda build .
 echo -e "\033[32mezc3d uploaded\033[0m"
 
 # remove environment
+cd ..
 source deactivate
 conda env remove -n builder
 
