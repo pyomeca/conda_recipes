@@ -1,21 +1,21 @@
 package:
   name: ezc3d
-  version: "0.3.0"
+  version: "0.3.2"
 
 source:
     git_url: https://github.com/pyomeca/ezc3d
-    git_tag: Release_0.3
+    git_tag: Release_0.3.2
 
 build:
-    number: 12
+    number: 13
     run_exports:
         strong:
-            - python=3.6
+            - python=3.7
             - numpy
 
 requirements:
     host:
-        - python=3.6
+        - python=3.7
         - numpy
     
     build:
