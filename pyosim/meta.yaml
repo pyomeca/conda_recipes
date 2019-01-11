@@ -7,7 +7,6 @@ package:
 
 source:
   git_url: https://github.com/pyomeca/pyosim
-  git_tag: 2018.1
 
 build:
   # If the installation is complex, or different between Unix and Windows, use
@@ -30,13 +29,8 @@ requirements:
     {# raw is for ignoring templating with cookiecutter, leaving it for use with conda-build #}
 
 test:
-  source_files:
-    - tests
-  requires:
-    - pytest
-    - pytest-cov
-  commands:
-    - pytest tests
+  imports:
+    - pyosim
 
 about:
   home: https://github.com/pyomeca/pyosim
