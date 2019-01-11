@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/pyomeca/pyosim
-  git_tag: 2018.1
+  git_tag: 2018.2
 
 build:
   # If the installation is complex, or different between Unix and Windows, use
