@@ -6,6 +6,10 @@
 {% set name = "pyomeca" %}
 {% set version = "2019.2" %}
 
+package:
+  name: {{ name }}
+  version: {{ version }}
+  
 source:
   path: ..
 
