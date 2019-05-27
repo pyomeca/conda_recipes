@@ -1,8 +1,10 @@
-{% set data = load_setup_py_data() %}
+# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
 
-package:
-  name: pyomeca
-  version: {{ data['version'] }}
+# Jinja variables help maintain the recipe as you'll update the version only here.
+# Using the name variable with the URL in line 14 is convenient
+# when copying and pasting from another recipe, but not really needed.
+{% set name = "pyomeca" %}
+{% set version = "2019.2" %}
 
 source:
   path: ..
@@ -21,10 +23,11 @@ requirements:
     - pyyaml
   run:
     - python
-    # dependencies are defined in setup.py
-    {% for dep in data['install_requires'] %}
-    - {{ dep.lower() }}
-    {% endfor %}
+    - numpy
+    - pandas
+    - matplotlib
+    - scipy
+    - ezc3d
 
 test:
   source_files:
@@ -38,9 +41,3 @@ test:
 about:
   home: https://github.com/pyomeca/pyomeca
   summary: Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way
-
-extra:
-    recipe-maintainers:
-        - mrtnz
-        - pariterre
-
